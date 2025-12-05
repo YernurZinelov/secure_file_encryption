@@ -1,50 +1,66 @@
-Project Proposal — Secure File Encryption System
-Team Members
+# Project Proposal — Secure File Encryption System
 
-Ernur Zinelov — Lead Developer / Cryptography Engineer
-GitHub: @yourusername
+## Team Members
+- **Ernur Zinelov** — Lead Developer / Cryptography Engineer  
+- **Shynggyskhan Kumkay** — Developer / Documentation & Testing Engineer  
 
-Shynggyskhan Kumkay — Developer / Documentation & Testing Engineer
-GitHub: @teammateusername
+## Project Option
+**Option 2 — Secure File Encryption & Signing System**
 
-Project Option
-
-Option 2 — Secure File Encryption & Signing System
-
-Project Title
-
+## Project Title
 Secure File Encryption and Digital Signature System
 
-Brief Description
+## Brief Description
+This project implements a command-line tool that performs secure file encryption, decryption, hashing, and digital signing.  
+It uses AES-256 for symmetric encryption, RSA-2048 for digital signatures, and a Key Management System (KMS) to securely generate and store cryptographic keys.
 
-This project implements a secure file encryption and digital signing system using modern cryptographic algorithms.
-Users can encrypt/decrypt files, generate and manage cryptographic keys, sign files, verify signatures, and compute hashes.
-The system is fully terminal-based and uses a modular Python architecture.
+## Cryptographic Components
+- AES-256-GCM — file encryption  
+- Scrypt — password-based key derivation  
+- RSA-2048 — keypair generation & signatures  
+- SHA-256 — hashing  
+- KMS — AES/RSA key storage and hybrid key wrapping  
 
-Cryptographic Components
+## Architecture Overview
 
-AES-256 (GCM) — authenticated symmetric encryption
+src/
+├── main.py
+├── app/
+│ └── cli.py
+├── crypto/
+│ ├── symmetric.py
+│ ├── asymmetric.py
+│ └── kms/
+│ └── key_manager.py
+└── docs/
+└── project_proposal.md
 
-Scrypt / Argon2 KDF — password-based key derivation
 
-RSA-2048 — keypair for signing and key encryption
+## Team Responsibilities
+**Ernur Zinelov**
+- AES encryption/decryption  
+- RSA signing/verification  
+- Hybrid encryption implementation  
+- CLI logic & orchestration  
+- Core cryptography code  
 
-SHA-256 — hashing files and signature input
+**Shynggyskhan Kumkay**
+- Documentation (proposal, architecture, security analysis)  
+- Manual + basic automated testing  
+- GitHub repository setup & structure  
+- Presentation slide preparation  
 
-AES Key Storage (KMS) — secure key generation and management
+## Planned Features
+- AES file encryption/decryption  
+- RSA digital signatures  
+- SHA-256 hashing  
+- AES/RSA key generation  
+- Hybrid encryption (AES key wrapped with RSA)  
+- Full CLI interface with validation  
 
-Architecture Overview
+## Deliverables
+- Public GitHub repository  
+- Fully working code implementation  
+- Documentation: README, architecture, security analysis, user guide  
+- Presentation + demo  
 
-The system is divided into modules:
-
-CLI Interface: Handles user interaction and menu logic
-
-Symmetric Crypto Module: AES-GCM encryption, decryption, hashing
-
-Asymmetric Crypto Module: RSA keypair generation, signing, verification
-
-KMS Module: Key Manager for AES and RSA
-
-Utilities & Helpers: Non-essential helpers for modularity
-
-The project follows a clean folder structure under the src/ directory.
