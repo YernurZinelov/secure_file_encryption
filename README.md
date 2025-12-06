@@ -45,15 +45,21 @@ project/
 │ testing.md
 │ LICENSE
 │ requirements.txt
+│ pytest.ini
 └── src/
-├── main.py
-├── app/
-│ └── cli.py
-└── crypto/
-├── symmetric.py
-├── asymmetric.py
-└── kms/
-└── key_manager.py
+    ├── main.py
+    ├── app/
+    │   └── cli.py
+    ├── crypto/
+    │   ├── symmetric.py
+    │   ├── asymmetric.py
+    │   └── kms/
+    │       └── key_manager.py
+    └── tests/
+        ├── test_symmetric.py
+        ├── test_asymmetric.py
+        └── test_kms.py
+
 
 
 ---
